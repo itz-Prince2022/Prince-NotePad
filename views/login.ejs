@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Kanit', sans-serif;
+            font-family: 'Ubuntu', sans-serif;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(170deg, rgb(245, 168, 168), rgb(165, 165, 249), rgb(254, 205, 205));
+        }
+
+        .container {
+            border: 3px solid rgb(252, 177, 177);
+            border-radius: 10px;
+            padding: 2rem;
+            background-color: whitesmoke;
+            box-shadow: 1px 2px 2px 3px lightslategray;
+        }
+
+        .heading {
+            font-weight: 750;
+        }
+
+        form {
+            font-size: 1.2rem;
+            cursor: default;
+        }
+
+        form>div {
+            display: block;
+            margin: .5rem;
+        }
+
+        input {
+            font-size: 1.1rem;
+            border-radius: 5px;
+            border: 1px solid gray;
+            padding: .5rem;
+            margin: .2rem;
+        }
+
+        input[type="submit"] {
+            font-size: 1.2rem;
+            border-radius: 5px;
+            padding: .2rem;
+            display: block;
+            margin-left: 70%;
+            margin-top: 1rem;
+            background-color: rgb(62, 145, 246);
+            color: white;
+            border: 1.5px solid rgb(15, 14, 14);
+            cursor: pointer;
+            box-shadow: 1px 1px 9px 1px rgb(154, 161, 169);
+        }
+
+        .info {
+            padding: .2rem;
+            cursor: default;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form action="/login" method="POST">
+            <div><span class="heading">UserName:</span><input type="text" name="t1" placeholder="Enter your Name"
+                    autofocus /></div>
+            <div><span class="heading">Password:</span><input type="password" name="t2"
+                    placeholder="Enter your Password" /></div>
+            <input type="submit" value="Sign In" name="s1" />
+        </form>
+        <div class="info">
+            <%=msg %>
+        </div>
+
+        <div class="info">
+            <span>New to register? <a href="/signup">Sign Up</a> </span>
+        </div>
+    </div>
+</body>
+
+</html>

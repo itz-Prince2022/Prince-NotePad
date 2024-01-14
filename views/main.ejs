@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NotePad</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheet/style.css">
+</head>
+
+<body onload="sayhello()">
+    <header>
+        <h2>NotePad</h2>
+        <nav>
+            <!-- <h2>NotePad</h2> -->
+            <ul>
+                <li><a href="/Create">Create</a></li>
+                <li><a href="/login">SignOut</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <% for(r in data) { let uid=data[r]._id; %>
+            <div class="group">
+                <span class="id border"> <span class="heading">ID(#) :</span>
+                    <%=data[r].id %>
+                </span>
+                <div class="deletediv"><a class="linkdelete" href="/del?uid=<%=uid%>"><span class="delete" title="Delete"><i
+                                class="ri-delete-bin-6-fill"></i></span></a></div><br /><br />
+                <a href="/update/?uid=<%=uid%>"><span class="edit" title="Edit"><i class="ri-edit-box-fill"></i></span></a>
+                <!--this is the edit logo-->
+                <span class="name border"> <span class="heading">Name :</span>
+                    <%=data[r].name %>
+                </span><br /><br />
+                <div class="topic border"> <span class="heading">Topic :</span>
+                    <%=data[r].topic %>
+                </div>
+                <div class="notes border"> <span class="heading">Notes :</span>
+                    <%=data[r].notes %>
+                </div><br />
+                <div class="notes border"><span class="heading">Created At:</span>
+                    <%=data[r].created_at%>
+                </div>
+            </div>
+            <% } %>
+    </div>
+    <footer>
+        <div>
+            <ul>
+                <li>FAQ</li>
+                <li>Report</li>
+                <li>Collaboration</li>
+            </ul>
+            <ul>
+                <li>Contact</li>
+                <li>All rights Reserved</li>
+                <li>Developed by Prince Patel</li>
+            </ul>
+        </div>
+    </footer>
+    <script src="/javascript/script.js" type="text/javascript"></script>
+</body>
+
+</htm
